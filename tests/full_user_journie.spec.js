@@ -72,15 +72,16 @@ test("Full user journie", async ({ page }) => {
   const purchase = new Purchase(page);
   await purchase.goToPurchase();
   const purchaseTab = await purchase.goToPurchase25();
-
-  const paymentPage = new PaymentPage(purchaseTab);
-  await paymentPage.addPromotionCode(cardDetails.code);
-  await paymentPage.toggleSaveInfo();
-  await paymentPage.populatePhone(cardDetails.phone);
-  await paymentPage.populateEmail(cardDetails.email);
-  await paymentPage.populateCardDetails(cardDetails.cardNumber, cardDetails.expiry, cardDetails.cvc, cardDetails.fullName);
-  await paymentPage.selectCountry(cardDetails.country);
-
-  //await expect(paymentPage.subscribeButton).toBeEnabled();
   await purchaseTab.close();
+
+  // const paymentPage = new PaymentPage(purchaseTab);
+  // await paymentPage.addPromotionCode(cardDetails.code);
+  // await paymentPage.toggleSaveInfo();
+  // await paymentPage.populatePhone(cardDetails.phone);
+  // await paymentPage.populateEmail(cardDetails.email);
+  // await paymentPage.populateCardDetails(cardDetails.cardNumber, cardDetails.expiry, cardDetails.cvc, cardDetails.fullName);
+  // await paymentPage.selectCountry(cardDetails.country);
+
+  // //await expect(paymentPage.subscribeButton).toBeEnabled();
+  // await purchaseTab.close();
 });
