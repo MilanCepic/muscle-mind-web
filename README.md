@@ -29,8 +29,12 @@ CI/Headless Mode
 npm run test:ci
 
 
+
+
+
 🎯 Test Coverage
 Full User Journey Test
+
 ✅ Language switching (English/Serbian)
 
 ✅ Contact form validation and submission
