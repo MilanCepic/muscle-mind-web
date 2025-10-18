@@ -23,10 +23,8 @@ export class LighthouseHelper {
       const runnerResult = await lighthouse(url, options);
       const { lhr } = runnerResult;
 
-      // Sačuvaj report
       this.saveReport(runnerResult.report, url);
 
-      // Proveri threshold-e
       const results = this.checkThresholds(lhr, thresholds);
 
       await chrome.kill();
