@@ -1,0 +1,25 @@
+{
+  "name": "muscle-mind-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --headed",
+    "test:journey": "playwright test tests/full_user_journie.spec.js --headed",
+    "test:lighthouse": "playwright test tests/lighthouse-audit.spec.js --headed",
+    "test:all": "npm run test:journey && npm run test:lighthouse",
+    "test:ci": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.2",
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "^13.0.0"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}
