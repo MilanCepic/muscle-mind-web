@@ -29,29 +29,6 @@ CI/Headless Mode
 npm run test:ci
 
 
-
-📁 Project Structure
-text
-muscle-mind-web/
-├── 📁 tests/
-│   └── full_user_journie.spec.js      # Complete user journey test
-├── 📁 page-objects/                   # Page Object Models
-│   ├── HomePage.js
-│   ├── ContactPage.js
-│   ├── ProgramsPage.js
-│   ├── Footer.js
-│   ├── FAQ.js
-│   ├── AboutUs.js
-│   ├── BlogPage.js
-│   ├── Purchase.js
-│   └── PaymentPage.js
-├── 📁 data/
-│   └── cardDetails.js                 # Test data for payments
-├── 📁 utils/
-│   ├── lighthouse-helper.js           # Performance testing utilities
-│   └── isDesktopViewport.js           # Responsive viewport detection
-└── 📄 playwright.config.ts            # Playwright configuration
-
 🎯 Test Coverage
 Full User Journey Test
 ✅ Language switching (English/Serbian)
