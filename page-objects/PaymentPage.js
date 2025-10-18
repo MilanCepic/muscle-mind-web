@@ -31,6 +31,7 @@ export class PaymentPage {
       return;
     }
     await this.promotionCodeInput.fill(code);
+    await this.page.waitForTimeout(500);
     await this.applyPromotionButton.click();
     await this.page.waitForTimeout(1000);
   };
