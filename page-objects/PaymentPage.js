@@ -24,19 +24,14 @@ export class PaymentPage {
     if (!isDesktopViewport(this.page)) {
       await this.mobDetailsButton.waitFor({ state: "visible" });
       await this.mobDetailsButton.click();
-      await this.page.waitForTimeout(1000);
       await this.promotionCodeInputMobile.fill(code);
-      await this.applyPromotionButton.waitFor({ state: "visible" });
-      await this.applyPromotionButton.waitFor({ state: "stable" });
-      await this.applyPromotionButton.click({ force: true });
+      await this.applyPromotionButton.click();
       await this.page.waitForTimeout(1000);
       await this.mobDetailsButton.click();
       return;
     }
     await this.promotionCodeInput.fill(code);
-    await this.applyPromotionButton.waitFor({ state: "visible" });
-    await this.applyPromotionButton.waitFor({ state: "stable" });
-    await this.applyPromotionButton.click({ force: true });
+    await this.applyPromotionButton.click();
     await this.page.waitForTimeout(1000);
   };
   toggleSaveInfo = async () => {

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test --headed",
+    "test:ci": "playwright test",
     "test:journey": "playwright test tests/full_user_journie.spec.js --headed",
     "test:lighthouse": "playwright test tests/lighthouse-audit.spec.js --headed",
-    "test:all": "npm run test:journey && npm run test:lighthouse",
-    "test:ci": "playwright test"
+    "test:all": "npm run test:journey && npm run test:lighthouse"
   },
   "keywords": [],
   "author": "",
