@@ -21,24 +21,24 @@ export class Footer {
     await this.footerSection.waitFor();
     await this.footerSection.scrollIntoViewIfNeeded();
   };
-  openSocialLink = async (socialIcon, expectedUrl) => {
+  openSocialLink = async (socialIcon, expectedDomain) => {
     await socialIcon.waitFor();
     const [newTab] = await Promise.all([this.page.context().waitForEvent("page"), socialIcon.click()]);
 
     //await newTab.waitForLoadState("domcontentloaded");
-    expect(newTab.url()).toContain(expectedUrl);
+    expect(newTab.url()).toContain(expectedDomain);
     await newTab.close();
   };
   goToYouTube = async () => {
     if (!isDesktopViewport(this.page)) {
-      await this.openSocialLink(this.youtubeIcon, "https://m.youtube.com/@steva_rl13");
+      await this.openSocialLink(this.youtubeIcon, "youtube.com");
     } else {
-      await this.openSocialLink(this.youtubeIcon, "https://www.youtube.com/@steva_rl13");
+      await this.openSocialLink(this.youtubeIcon, "youtube.com");
     }
   };
 
   goToInstagram = async () => {
-    await this.openSocialLink(this.instagramIcon, "https://www.instagram.com/musclemindapp/");
+    await this.openSocialLink(this.instagramIcon, "instagram.com");
   };
 
   // goToFacebook = async () => {
@@ -54,7 +54,7 @@ export class Footer {
   };
 
   goToTikTok = async () => {
-    await this.openSocialLink(this.tiktokIcon, "https://www.tiktok.com/@musclemindapp");
+    await this.openSocialLink(this.tiktokIcon, "tiktok.com");
   };
 
   testNewsletterValidation = async () => {

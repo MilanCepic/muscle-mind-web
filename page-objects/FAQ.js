@@ -21,6 +21,7 @@ export class FAQ {
       await this.faqLink.waitFor({ state: "visible" });
       await this.faqLink.click();
     }
+    await this.page.waitForURL(/(\/faq|\/faqs)/, { timeout: 15000 });
   };
   assertOnFAQPage = async () => {
     await expect(this.page).toHaveURL(/(\/faq|\/faqs)/, { timeout: 10000 });
